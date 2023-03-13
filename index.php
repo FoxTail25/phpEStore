@@ -1,7 +1,8 @@
 <?
 	include 'inc/headers.inc.php';
+	include 'inc/cookie.inc.php';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 	<head>
 		<title><?= $title?></title>
@@ -22,6 +23,16 @@
 			<!-- Заголовок -->
 			<h1><?= $header?></h1>
 			<!-- Заголовок -->
+			<blockquote>
+				<?php
+				if($visitCounter == 1) {
+					echo "Спасибо что зашли на огонёк!";
+				}else{
+					echo "Вы зашли к нам $visitCounter раз<br>";
+					echo "Последнее посещение: $lastVisit";
+				}
+				?>
+			</blockquote>
 			<!-- Область основного контента -->
 			<?php
 				include 'inc/routing.inc.php';
